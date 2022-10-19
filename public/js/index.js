@@ -8,7 +8,7 @@ form.addEventListener('submit', async (e) => {
     message1.textContent = 'loading...';
     message2.textContent = '';
     e.preventDefault();
-    const weatherResponse = await fetch(`http://localhost:3000/weather?address=${input.value}`);
+    const weatherResponse = await fetch(`/weather?address=${input.value}`);
     const weatherJson = await weatherResponse.json();
     if(weatherJson.error){
         message1.textContent = weatherJson.error;
